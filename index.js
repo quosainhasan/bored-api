@@ -8,8 +8,14 @@ const port = process.env.PORT || 3000;
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-    res.render('index.ejs');
+app.get('/', async(req, res) => {
+    try {
+        const { data } = await axios.get('https://bored-api.appbrewery.com/random');
+        res.render('index.ejs', { data });
+    }
+    catch (error) {
+        console.log(error);
+    }
 });
 
 
