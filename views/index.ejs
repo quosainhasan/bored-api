@@ -9,10 +9,10 @@
 <body>
     <div class="container my-5 text-center">
         <h1 class="my-5">What to do?</h1>
-        <form action="/activity" method="get">
+        <form action="/activity" method="post">
             <div class="row mb-5">
                 <div class="col">
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" name="activity" aria-label="Default select example">
                         <option selected>Select type of activity</option>
                         <option value="education">Education</option>
                         <option value="recreational">Recreational</option>
@@ -24,7 +24,7 @@
                     </select>
                 </div>
                 <div class="col">
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" name="people" aria-label="Default select example">
                         <option selected>Select participants</option>
                         <option value="1">1</option>
                         <option value="2">2</option>

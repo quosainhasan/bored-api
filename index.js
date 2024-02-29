@@ -18,6 +18,10 @@ app.get('/', async(req, res) => {
     }
 });
 
+app.post('/activity', async(req, res) => {
+    console.log(req.body);
+});
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
