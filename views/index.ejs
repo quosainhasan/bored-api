@@ -8,7 +8,32 @@
 </head>
 <body>
     <div class="container my-5 text-center">
-        <h1 class="mt-5">What to do?</h1>
+        <h1 class="my-5">What to do?</h1>
+        <form action="/activity" method="get">
+            <div class="row mb-5">
+                <div class="col">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="education">Education</option>
+                        <option value="recreational">Recreational</option>
+                        <option value="social">Social</option>
+                        <option value="charity">Charity</option>
+                        <option value="cooking">Cooking</option>
+                        <option value="relaxation">Relaxation</option>
+                        <option value="busywork">Busy Work</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Get Activity</button>
+        </form>
         <hr class="mb-5">
         <div class="card text-center">
             <div class="card-header">
