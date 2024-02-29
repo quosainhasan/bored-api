@@ -20,6 +20,21 @@ app.get('/', async(req, res) => {
 
 app.post('/activity', async(req, res) => {
     console.log(req.body);
+    const activity = req.body.activity;
+    const participants = req.body.people;
+    try {
+        const { data } = await axios.get(`https://bored-api.appbrewery.com/filter?type=${activity}`, {
+            params: {
+                type: req.body.type,
+                participants: req.body.participants,
+                price: req.body.price
+            }
+        });
+        res.render('index.ejs', { data });
+    }
+    catch (error) {
+        console.log(error);
+    }
 });
 
 
