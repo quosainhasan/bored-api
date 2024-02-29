@@ -21,8 +21,16 @@ app.get('/', async(req, res) => {
 app.post('/activity', async(req, res) => {
     const activity = req.body.activity;
     const participants = req.body.people;
+    var endpoint = `https://bored-api.appbrewery.com/activity?`;
+    if (participants === "Select participants") {
+        endpoint = `https://bored-api.appbrewery.com/filter?type=${activity}`;
+    }
+    else {
+        endpoint = `https://bored-api.appbrewery.com/filter?type=${activity}&participants=${participants}`;
+    }
+    console.log(activity, participants);
     try {
-        const { data } = await axios.get(`https://bored-api.appbrewery.com/filter?type=${activity}&participants=${participants}`, {
+        const { data } = await axios.get(endpoint, {
         });
         const result = Math.floor(Math.random() * data.length);
         res.render('index.ejs', { data: data[result]});
