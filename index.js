@@ -25,7 +25,8 @@ app.post('/activity', async(req, res) => {
     try {
         const { data } = await axios.get(`https://bored-api.appbrewery.com/filter?type=${activity}`, {
         });
-        res.render('index.ejs', { data });
+        const result = Math.floor(Math.random() * data.length);
+        res.render('index.ejs', { data: data[result]});
     }
     catch (error) {
         console.log(error);
