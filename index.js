@@ -28,7 +28,6 @@ app.post('/activity', async(req, res) => {
     else {
         endpoint = `https://bored-api.appbrewery.com/filter?type=${activity}&participants=${participants}`;
     }
-    console.log(activity, participants);
     try {
         const { data } = await axios.get(endpoint, {
         });
